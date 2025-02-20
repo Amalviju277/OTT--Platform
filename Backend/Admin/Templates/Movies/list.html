@@ -1,0 +1,58 @@
+{% extends 'layout/app-layout.html' %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'list.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <h1 class="text-center mb-4">Movie List</h1>
+        <div class="col">
+            <a id="create" class="btn btn-info btn-lg" href="{% url 'create' %}">Create</a>
+
+            <!-- Search form -->
+            <form method="get" action="{% url 'list' %}">
+                <div id="search">
+                    <input  type="text" class="ml-auto" placeholder="search movies" name="query" value="{{search}}">
+                    <button type="submit" class="bg-dark"><i class="fa fa-search text-white"></i></button>
+                </div>
+            </form>
+           
+            <div class="table-responsive mt-5">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark ">
+                       <tr > 
+                        <th>Movie Id</th>
+                        <th>Movie Name</th>
+                        <th>Actions</th>
+                       </tr>
+                    </thead>
+                    <tbody >
+                    {% for movie in page_obj %}
+                        <tr class="table-info">
+                            <td>{{movie.id}}</td>
+                            <td>{{movie.title}}</td>                           
+                            <td ><a href="{% url 'view' movie.id %}">
+                                    <i class="fa fa-eye ml-3 "></i>
+                                </a>
+                                <a style="color:#F6BE00" href="{% url 'edit_movie' movie.id %}">
+                                    <i class="fa fa-edit ml-3 "></i>
+                                </a>
+                                <a href="{% url 'delete' movie.id %}">
+                                    <i style="color: red" class="fa fa-trash ml-4"></i>
+                                </a>
+                            </td> 
+                        </tr>                       
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>        
+        </div>
+    </div>
+</div>
+
+{% include 'partials/pagination.html' %}
+{% endblock %}

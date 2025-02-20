@@ -1,0 +1,11 @@
+
+    #block:hover{
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+    #search{
+        display :flex
+    }
+    .td{
+        text-decoration: overline;
+    }

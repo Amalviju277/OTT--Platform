@@ -1,0 +1,14 @@
+.background2{
+    background-image: url('./images/Common.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 150vh;
+    font-weight: bold ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   
+    
+    
+  }
+
+  

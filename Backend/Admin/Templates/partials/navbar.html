@@ -1,0 +1,30 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'Login' %}">
+        <h4 class="ml-4">LUMIA</h4>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="text" href="{% url 'list' %}">Movie List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="text" href="{% url 'user' %}">User Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="text" href="{% url 'count' %}">Report</a>
+            </li>         
+            <li class="nav-item">
+                <a class="nav-link" id="text" href="{% url 'profile' %}"> Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="text" href="{% url 'Logout' %}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

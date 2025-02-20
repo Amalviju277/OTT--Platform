@@ -1,0 +1,41 @@
+
+.background1{
+  background-image: url('./Home.jpg');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  min-height: 100vh;
+}
+.lumia{
+  color:greenyellow;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+  font-size: larger;
+}
+
+
+
+
+/* .background3{
+  background-image: url('https://t4.ftcdn.net/jpg/09/27/94/25/360_F_927942593_12DExYYYYu346HNyzeqsaJwKGUzvTAgD.jpg');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  height: 100vh;
+}
+.background4{
+  background-image: url('https://t4.ftcdn.net/jpg/02/86/32/31/360_F_286323187_mDk3N4nGDaPkUmhNcdBe3RjSOfKqx4nZ.jpg');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  height: 100vh;
+}
+.background5{
+  background-image: url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=2056&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+} */
+
+
+

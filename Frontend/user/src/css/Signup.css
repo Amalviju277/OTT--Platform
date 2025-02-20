@@ -1,0 +1,10 @@
+.signup{
+    /* background-image: url('https://my.qls.com.au/assets/images/b2c_signin_background.jpg'); */
+    background-image: url('./images/Signup.avif');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,40 @@
+{% extends 'layout/app-layout.html' %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'user-history.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">User History</h1>
+    <div class="table-responsive">
+        <h3 class="mt-4 mb-4">User : <span class="text-danger">{{ user_detail.user.username }}</span></h3>
+        <h3 class="mt-4 mb-4">Email : <span class="text-danger">{{  }}</span></h3>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>                
+                    <th>Movie ID</th>
+                    <th>Movie</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody class="table-info">
+                {% for item in page_obj %}
+                
+                <tr>
+                    
+                    <td>{{ item.movie.id }}</td>
+                    <td>{{ item.movie.title }}</td>
+                    <td>{{ item.date }}</td> 
+                      
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include 'partials/pagination.html' %}
+{% endblock %}

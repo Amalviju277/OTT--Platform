@@ -1,0 +1,34 @@
+{% extends 'layout/app-layout.html' %}
+{% block 'content' %}
+    <div>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <h2 class="text-center mb-4">Add Movie</h2>
+                <div class="col-md-6">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-4 mt-3">
+                            <label class="form-label">Movie Title</label>
+                            <input type="text" name="title" class="form-control" placeholder="Title" required/>
+                        </div>
+                        <div class="mb-4 mt-3">
+                            <label class="form-label">Description</label>
+                            <textarea name="description" class="form-control" placeholder="Description" required></textarea>
+                        </div>
+                        <div class="mb-4 mt-3">
+                            <label class="form-label">Movie thumbnail</label>
+                            <input type="file" name="thumbnail_url" class="form-control" required/>
+                        </div>
+                        <div class="mb-4 mt-3">
+                            <label class="form-label">Upload Movie</label>
+                            <input type="file" name="video_url" class="form-control" required/>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

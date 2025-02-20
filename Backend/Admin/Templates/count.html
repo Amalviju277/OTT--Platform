@@ -1,0 +1,49 @@
+{% extends 'layout/app-layout.html' %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'count.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <h1 class="text-center mb-4">Count</h1>
+        <div class="col">
+             
+            <!-- Search bar -->
+              <form method="get" action="{% url 'count' %}">
+                <div id="search">
+                    <input  type="text" name="query" placeholder="search movies" value="{{ search }}">
+                    <button type="submit" class="bg-dark">
+                        <i class="fa fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="table-responsive mt-5">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Movie ID</th>
+                            <th>Movie Name</th>
+                            <th>Views</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for movie in page_obj %}
+                            <tr class="table-info">
+                                <td>{{ movie.id }}</td>
+                                <td>{{ movie.title }}</td>
+                                <td><i class="fa fa-eye ml-3 mr-2"></i> {{ movie.view_count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/pagination.html' %}
+{% endblock %}

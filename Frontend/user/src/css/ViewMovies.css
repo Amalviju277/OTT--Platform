@@ -1,0 +1,16 @@
+video{
+    max-width: 2000px; 
+    max-height: 1000px;
+    margin: 0 auto;
+}
+.background{
+    background-image: url('./images/Common.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    font-weight: bold ;
+    display: flex;
+  }.movie-image{
+    max-width: 1000px; 
+    max-height: 400px;
+  }

@@ -1,0 +1,27 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+.movie-title {
+    font-size: 4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.movie-description {
+    margin-bottom: 20px;
+}
+.movie-image {
+    max-width: 100%;
+    height: auto;
+}
+.movie-video {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.btn-info{
+    width: 20%; 
+    
+}

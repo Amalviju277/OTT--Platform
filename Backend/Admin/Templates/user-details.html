@@ -1,0 +1,66 @@
+{% extends 'layout/app-layout.html' %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'user-details.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+
+<div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <h1 class="text-center mb-4">User List</h1>
+            <div class="col">
+                
+                <!-- Search bar -->
+                <form method="get" action="{% url 'user' %}">
+                    <div id="search">
+                        <input  type="text" name="query" placeholder="search user" value="{{ search }}">
+                        <button type="submit" class="bg-dark">
+                            <i class="fa fa-search text-white"></i>
+                        </button>
+                    </div>
+                </form>
+
+                    <div class="table-responsive mt-5">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark ">
+                               <tr > 
+                                <th>User ID</th>
+                                <th>Email</th>
+                                <th>Block/Unblock</th>
+                               </tr>
+                            </thead>
+                            <tbody >
+                                {% for user in page_obj %}
+                                <tr class="table-info">
+                                    <td>{{user.id}}</td>
+                                    <td>
+                                        <a href="{% url 'user_history' user.id %}">
+                                            {{user.email}}
+                                        </a>
+                                    </td>                           
+                                    <td>
+                                        {% if user.is_blocked %}
+                                            <a href="{% url 'unblock' user.id %}" class="btn btn-success">
+                                                <i class="fa fa-unlock"></i>
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'block' user.id %}" class="btn btn-danger">
+                                                <i class="fa fa-lock"></i>
+                                            </a>
+                                        {% endif %} 
+                                    </td> 
+                                 </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/pagination.html' %}
+{% endblock %}

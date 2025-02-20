@@ -1,0 +1,54 @@
+<style>
+.pagination .page-item .page-link {
+    color: #007bff; /* Bootstrap primary color */
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 0 3px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: black;
+    color: white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+</style>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center mt-4">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a href="?page=1" class="page-link">&laquo; First</a>
+            </li>
+            <li class="page-item">
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Prev</a>
+            </li>
+        {% endif %}
+
+        {% for page_number in page_obj.paginator.get_elided_page_range %}
+            {% if page_obj.number == page_number %}
+                <li class="page-item active">
+                    <span class="page-link">{{ page_number }}</span>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a href="?page={{ page_number }}" class="page-link">{{ page_number }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a>
+            </li>
+            <li class="page-item">
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">Last &raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

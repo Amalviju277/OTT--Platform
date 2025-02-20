@@ -1,0 +1,10 @@
+.history{
+    background-image: url('./images/Common.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 200vh;
+    font-weight: bold ;
+  }
+  .font{
+    margin-right: 20px;
+  }

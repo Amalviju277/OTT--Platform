@@ -1,0 +1,32 @@
+
+
+    .fa-eye{
+        color: black;
+        padding: 10px;
+    }
+    .fa-eye:hover{
+        cursor: pointer;
+        transform: scale(2.0);
+    }
+    .fa-edit{
+        padding: 10px;
+        color:darkgoldenrod;
+    }
+    .fa-edit:hover{
+        transform: scale(2.0);
+        cursor: pointer;
+    }
+    .fa-trash{
+        padding: 10px;
+        color: red;
+    }
+    .fa-trash:hover{
+        cursor:pointer;
+        transform:scale(2.0);
+    }
+    #create{
+        width: 200px;
+    }
+    #search{
+        display: flex;
+    }

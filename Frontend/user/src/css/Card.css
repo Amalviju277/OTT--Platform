@@ -1,0 +1,64 @@
+.search{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+}
+.custom-card {
+  background-color:black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 280px; /* decreased width */
+  height: 340px; /* increased height */
+  margin: 0 auto; /* ensure centering within column */
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+.custom-card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%; /* ensure image fits within the card */
+  height: 280px; /* increased image height */
+  object-fit: cover; /* ensure the image covers the space without distortion */
+}
+
+.custom-card-body {
+  padding: 0.5rem; /* reduced padding */
+}
+
+.custom-card-title {
+  color: white;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap; /* ensure title stays on one line */
+  overflow: hidden; /* prevent overflow */
+  text-overflow: ellipsis; /* add ellipsis if title is too long */
+}
+
+.pagination .page-item .page-link {
+  background: #f8f9fa;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagination .page-item .page-link:hover {
+  background: #17a2b8;
+  color: white;
+}
+
+.pagination .page-item.active .page-link {
+  background: #007bff;
+  color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+  opacity: 0.5;
+  pointer-events: none;
+}
