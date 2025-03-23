@@ -13,7 +13,6 @@ from .serializers import UserSerializer, MovieSerializer, HistorySerializer, Wat
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def Signup(request):
-
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -24,7 +23,6 @@ def Signup(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def Login(request):
-
     email = request.data.get("email")
     password = request.data.get("password")
     if not email or not password:
